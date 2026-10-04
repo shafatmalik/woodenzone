@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Woodenzone – Crafted by Nature, Made for You</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500&display=swap">
+<style>
+:root{--ivory:#FAF6EE;--cream:#F1E9DA;--beige:#E4D6BF;--walnut:#6B4A32;--choc:#2E1F16;--gold:#B08D4C;--wood:#A9794F;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ivory);color:var(--choc);font:16px/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.1;margin:0}
+h2{font-size:clamp(30px,5vw,46px)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+section{padding:72px 0}
+header{position:sticky;top:0;z-index:20;background:rgba(250,246,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--beige)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:"Cormorant Garamond",serif;font-size:26px;letter-spacing:.18em;font-weight:600}
+.logo i{color:var(--gold);font-style:normal}
+nav{display:flex;gap:26px;font-size:14px}
+nav a{background:linear-gradient(var(--gold),var(--gold)) 0 100%/0 1px no-repeat;transition:background-size .3s;padding-bottom:2px}
+nav a:hover{background-size:100% 1px}
+.icons{display:flex;gap:16px;align-items:center;font-size:14px}
+.icons button{background:none;border:0;font:inherit;color:inherit;cursor:pointer}
+#menu{display:none}
+.btn{display:inline-block;padding:14px 28px;border-radius:40px;border:1px solid var(--choc);font-size:14px;cursor:pointer;background:none;color:var(--choc);font-family:inherit;transition:.25s}
+.btn.solid{background:var(--choc);color:var(--ivory)}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.hero{padding:0}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;min-height:620px;padding-top:40px;padding-bottom:40px}
+.hero h1{font-size:clamp(46px,7vw,84px);margin-bottom:20px}
+.hero p{font-size:19px;max-width:420px;color:var(--walnut);margin:0 0 30px}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
+.scene{position:relative;height:540px;background:var(--beige);border-radius:240px 240px 24px 24px;overflow:hidden}
+.sun{position:absolute;top:0;right:0;width:70%;height:100%;background:linear-gradient(115deg,rgba(255,244,214,.7),transparent 65%)}
+.lamp{position:absolute;left:20%;top:90px;width:84px;height:70px;background:#EBDDBE;border-radius:50% 50% 8px 8px/70% 70% 8px 8px;box-shadow:0 0 70px 24px rgba(255,214,140,.55)}
+.lamp:after{content:"";position:absolute;left:39px;top:70px;width:6px;height:210px;background:var(--choc)}
+.table{position:absolute;left:34%;bottom:70px;width:56%;height:16px;background:linear-gradient(90deg,var(--walnut),var(--wood));border-radius:3px}
+.table:before,.table:after{content:"";position:absolute;top:16px;width:12px;height:150px;background:var(--walnut)}
+.table:before{left:12%}.table:after{right:12%}
+.bowl{position:absolute;left:52%;bottom:86px;width:84px;height:34px;background:var(--choc);border-radius:0 0 80px 80px}
+.floor{position:absolute;left:0;right:0;bottom:0;height:70px;background:var(--wood);opacity:.35}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+.cat{background:var(--cream);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s}
+.cat:hover{transform:translateY(-4px)}
+.cat .img{height:210px;border-radius:0 0 100px 100px/0 0 40px 40px}
+.cat div.t{padding:20px}
+.cat h3{font-size:26px}
+.cat p{margin:6px 0 14px;font-size:14px;color:var(--walnut)}
+.cat span{font-size:14px;border-bottom:1px solid var(--gold)}
+.g1{background:linear-gradient(135deg,#8A5E3B,#C8996B)}
+.g2{background:radial-gradient(circle at 50% 35%,#F6D893 0,#C9A15A 25%,#6B4A32 70%)}
+.g3{background:repeating-linear-gradient(100deg,#B58A5E 0 14px,#A57A50 14px 28px)}
+.g4{background:linear-gradient(160deg,#D9BF94,#9A6B43)}
+.sub{color:var(--walnut);max-width:520px;margin:12px 0 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:36px}
+.card{position:relative}
+.card .img{height:300px;border-radius:18px;margin-bottom:14px;transition:transform .3s}
+.card:hover .img{transform:translateY(-4px)}
+.card h3{font-size:24px}
+.meta{font-size:13px;color:var(--walnut)}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.price{font-weight:500}
+.wish{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:0;background:var(--ivory);cursor:pointer;font-size:18px;color:var(--walnut)}
+.wish[aria-pressed=true]{color:#9B2D20}
+.add{padding:9px 18px;font-size:13px}
+.why{background:var(--choc);color:var(--cream)}
+.why .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:40px}
+.why h3{font-size:26px;color:var(--gold);margin-bottom:8px}
+.why p{margin:0;font-size:15px;color:var(--beige)}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.story .img{height:420px;border-radius:24px 200px 24px 24px}
+.story p{color:var(--walnut)}
+.steps{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.steps li{list-style:none;border:1px solid var(--gold);border-radius:30px;padding:5px 14px;font-size:13px}
+.steps{padding:0}
+.news{background:var(--beige);text-align:center}
+.news form{display:flex;gap:10px;justify-content:center;margin-top:26px;flex-wrap:wrap}
+.news input{padding:14px 20px;border-radius:40px;border:1px solid var(--walnut);background:var(--ivory);min-width:260px;font:inherit}
+footer{background:#241810;color:var(--beige);padding:60px 0 30px;font-size:14px}
+footer .cols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
+footer h4{font-family:"Cormorant Garamond",serif;font-size:20px;color:var(--gold);margin:0 0 10px;font-weight:500}
+footer a{display:block;margin:5px 0}
+footer .logo{color:var(--cream)}
+.copy{margin-top:40px;border-top:1px solid #4a3626;padding-top:18px;font-size:12px}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));background:#25613F;color:#fff;border-radius:40px;padding:12px 20px;font-size:14px;z-index:30;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#toast{position:fixed;left:50%;bottom:calc(80px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--choc);color:var(--ivory);padding:10px 20px;border-radius:30px;font-size:14px;opacity:0;transition:.3s;z-index:40;pointer-events:none}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.hero .wrap>div:first-child{animation:in .9s ease both}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(max-width:900px){
+nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--ivory);flex-direction:column;padding:20px 22px;gap:14px;border-bottom:1px solid var(--beige)}
+nav.open{display:flex}
+#menu{display:block}
+.hero .wrap{grid-template-columns:1fr;min-height:0}
+.scene{height:380px}
+.lamp{top:50px}.lamp:after{height:140px}
+.cats{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-right:-22px;padding-right:22px}
+.cat{min-width:78%;scroll-snap-align:start}
+.grid,.why .cols,.story,footer .cols{grid-template-columns:1fr}
+.story .img{height:300px}
+.card .img{height:260px}
+section{padding:52px 0}
+}
+[data-bg]{background-size:cover;background-position:center}
+.card img{width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 62%;border-radius:18px;margin-bottom:14px;cursor:zoom-in;background:var(--beige);display:block}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.chips button{padding:8px 18px;border-radius:30px;border:1px solid var(--walnut);background:none;color:var(--choc);font:inherit;font-size:14px;cursor:pointer}
+.chips button[aria-pressed=true]{background:var(--choc);color:var(--ivory);border-color:var(--choc)}
+dialog{border:0;padding:0;background:none;max-width:min(94vw,760px)}dialog::backdrop{background:rgba(30,20,12,.8)}
+dialog img{display:block;max-width:100%;max-height:88vh;margin:auto;border-radius:12px}
+.card[data-cat="Table Lamps"] img{aspect-ratio:4/5;object-position:center}
+.card[data-cat="Kitchenware"] img{aspect-ratio:4/3;object-position:center}
+.card[data-cat="Home Decor"] img{aspect-ratio:4/5;object-position:center}
+</style></head>
+<body>
+<header><div class="wrap bar">
+<a class="logo" href="#top">WOODEN<i>ZONE</i></a>
+<nav id="nav" aria-label="Main">
+<a href="#furniture">Furniture</a><a href="#lighting">Lighting</a><a href="#decor">Home Decor</a><a href="#kitchen">Kitchenware</a><a href="#featured">New Arrivals</a><a href="#about">About Us</a><a href="#contact">Contact</a></nav>
+<div class="icons"><button id="menu" aria-label="Menu" aria-expanded="false">Menu</button><button aria-label="Search">Search</button><button aria-label="Wishlist">Wishlist (<span id="count">0</span>)</button></div>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+<div><h1>Crafted by Nature, Made for You.</h1>
+<p>Timeless wooden creations for beautiful everyday living.</p>
+<div class="btns"><a class="btn solid" href="#featured">Shop the Collection</a><a class="btn" href="#categories">Explore Collection</a></div></div>
+<div class="scene" data-bg="6" role="img" aria-label="Velvet sofa with a wooden frame"></div>
+</div></section>
+
+<section id="categories"><div class="wrap">
+<h2>Shop by category</h2>
+<div class="cats">
+<a class="cat" id="furniture" href="#featured"><div class="img" data-bg="13"></div><div class="t"><h3>Furniture</h3><p>Timeless forms. Natural craftsmanship. Chairs, tables, console tables, stools and shelves.</p><span>Explore Furniture</span></div></a>
+<a class="cat" id="lighting" href="#featured"><div class="img" data-bg="26"></div><div class="t"><h3>Lighting</h3><p>Illuminate your space with style. Table, floor, pendant and wooden lamps.</p><span>Explore Lighting</span></div></a>
+<a class="cat" id="decor" href="#featured"><div class="img" data-bg="43"></div><div class="t"><h3>Home Decor</h3><p>Bring warmth and character home. Bowls, trays, planters and wall pieces.</p><span>Explore Home Decor</span></div></a>
+<a class="cat" id="kitchen" href="#featured"><div class="img" data-bg="36"></div><div class="t"><h3>Kitchenware</h3><p>Natural craftsmanship for everyday living. Boards, bowls, trays and utensils.</p><span>Explore Kitchenware</span></div></a>
+</div></div></section>
+
+<section id="featured" style="background:var(--cream)"><div class="wrap">
+<h2>Made for Modern Living</h2>
+<p class="sub">Tap any photo to see the full product details.</p><div class="chips" id="chips"></div>
+<div class="grid" id="products"></div>
+</div></section>
+
+<section class="why"><div class="wrap">
+<h2>Why Woodenzone?</h2>
+<div class="cols">
+<div><h3>Natural Materials</h3><p>Carefully selected wood and natural materials.</p></div>
+<div><h3>Skilled Craftsmanship</h3><p>Made with attention to detail and finishing.</p></div>
+<div><h3>Made in Saharanpur</h3><p>Crafted in our manufacturing unit in Saharanpur, India.</p></div>
+<div><h3>Built for Everyday Living</h3><p>Functional designs made to complement modern homes.</p></div>
+</div></div></section>
+
+<section id="about"><div class="wrap story">
+<div class="img" data-bg="19"></div>
+<div><h2>From Wood to Your Home.</h2>
+<p>At Woodenzone, we combine traditional craftsmanship with contemporary design to create furniture, lighting, kitchenware and home décor that bring warmth and character to everyday spaces.</p>
+<p>Woodenzone is a Saharanpur-based wooden products manufacturer. We work with exporters and established companies while developing our own collection of premium wooden products.</p>
+<ul class="steps"><li>Wood selection</li><li>Cutting</li><li>Shaping</li><li>Sanding</li><li>Finishing</li><li>Quality inspection</li></ul></div>
+</div></section>
+
+<section class="news"><div class="wrap">
+<h2>Bring Natural Beauty Home.</h2>
+<p class="sub" style="margin-inline:auto">Be the first to discover new collections, handcrafted pieces and exclusive Woodenzone offers.</p>
+<form id="nl"><input type="email" required placeholder="Enter your email" aria-label="Email"><button class="btn solid">Subscribe</button></form>
+</div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+<div class="cols">
+<div><div class="logo">WOODEN<i style="color:var(--gold);font-style:normal">ZONE</i></div><p>Crafted by Nature, Made for You.</p></div>
+<div><h4>Shop</h4><a href="#furniture">Furniture</a><a href="#lighting">Lighting</a><a href="#decor">Home Decor</a><a href="#kitchen">Kitchenware</a></div>
+<div><h4>Company</h4><a href="#about">About Us</a><a href="#about">Our Craft</a><a href="https://instagram.com/woodenzone">Instagram</a></div>
+<div><h4>Contact</h4><a href="tel:+918077625193">+91 8077625193</a><a href="mailto:mywoodenzone@gmail.com">mywoodenzone@gmail.com</a><span>Saharanpur, India</span></div>
+</div>
+<div class="copy">© 2026 Woodenzone. All rights reserved.</div>
+</div></footer>
+
+<a class="wa" href="https://wa.me/918077625193" aria-label="Chat on WhatsApp">WhatsApp us</a>
+<dialog id="lb"><img alt=""></dialog>
+<div id="toast" role="status"></div>
+
+<script>
+var IM=["images/img-01.jpg", "images/img-02.jpg", "images/img-03.jpg", "images/img-04.jpg", "images/img-05.jpg", "images/img-06.jpg", "images/img-07.jpg", "images/img-08.jpg", "images/img-09.jpg", "images/img-10.jpg", "images/img-11.jpg", "images/img-12.jpg", "images/img-13.jpg", "images/img-14.jpg", "images/img-15.jpg", "images/img-16.jpg", "images/img-17.jpg", "images/img-18.jpg", "images/img-19.jpg", "images/img-20.jpg", "images/img-21.jpg", "images/img-22.jpg", "images/img-23.jpg", "images/img-24.jpg", "images/img-25.jpg", "images/img-26.jpg", "images/img-27.jpg", "images/img-28.jpg", "images/img-29.jpg", "images/img-30.jpg", "images/img-31.jpg", "images/img-32.jpg", "images/img-33.jpg", "images/img-34.jpg", "images/img-35.jpg", "images/img-36.jpg", "images/img-37.jpg", "images/img-38.jpg", "images/img-39.jpg", "images/img-40.jpg", "images/img-41.jpg", "images/img-42.jpg", "images/img-43.jpg", "images/img-44.jpg", "images/img-45.jpg", "images/img-46.jpg", "images/img-47.jpg", "images/img-48.jpg", "images/img-49.jpg", "images/img-50.jpg"];
+var P=[["Round Side Table", "SKU 8", "Premium wood, natural finish. 45 x 45 x 50 cm", "Side Tables", 0], ["Three-tier Console Table", "SKU 3", "Open shelves with cross-braced sides", "Console Tables", 1], ["Cane-back Chair", "SKU 11", "Solid wood frame, cane back, cream seat", "Chairs", 2], ["Carved Nesting Tables", "SKU 7", "Hand-carved panels, natural wood finish", "Side Tables", 3], ["Green Upholstered Chair", "SKU WZ-06", "Solid wood legs, curved green back", "Chairs", 4], ["Fluted Round Table", "SKU 1", "Solid wood, natural PU finish", "Sofas & Tables", 5], ["Velvet Sofa", "", "Wooden frame, mustard velvet, bolster arms", "Sofas & Tables", 6], ["Cushioned Armchair", "SKU 10", "Solid wood frame, cream upholstery", "Chairs", 7], ["Cross-leg Console Table", "SKU 2", "Curved crossed legs, premium finish", "Console Tables", 8], ["Cane Armchair", "SKU 9", "Cane back, green seat, walnut frame", "Chairs", 9], ["Teal Half-round Console", "SKU 1", "Hand-finished with carved leaf details", "Console Tables", 10], ["C-shape Side Table", "SKU 2", "Whitewashed finish. 45 x 45 x 60 cm", "Side Tables", 11], ["Tripod Side Table", "SKU 9", "Premium wood, natural finish. 45 x 45 x 50 cm", "Side Tables", 12], ["Rope-back Daybed", "", "Teak-tone frame, woven rope back, cream cushion", "Sofas & Tables", 13], ["Pedestal Side Table", "SKU 4", "Turned pedestal, natural wood finish", "Side Tables", 14], ["Bobbin Side Table", "SKU 1", "Turned bobbin base. 45 x 45 x 60 cm", "Side Tables", 15], ["Slatted Side Table", "SKU 3", "Slatted top. 45 x 45 x 45 cm", "Side Tables", 16], ["Scalloped Side Table", "SKU 6", "Scalloped top. 45 x 45 x 60 cm", "Side Tables", 17], ["Light Walnut Console Table", "SKU 4", "Chunky solid wood, light walnut finish", "Console Tables", 18], ["Round Armchair", "", "Solid wood frame, soft cream upholstery", "Chairs", 19], ["Black Turned Lamp", "", "Dark wood base, natural linen drum shade", "Table Lamps", 20], ["Ribbed Dark Lamp", "", "Ribbed dark-finish base, beige drum shade", "Table Lamps", 21], ["Whitewash Ribbed Lamp", "", "Whitewashed ribbed round base, cream shade", "Table Lamps", 22], ["Sphere Wood Lamp", "", "Polished round wood base, tapered shade", "Table Lamps", 23], ["Banded Round Lamp", "", "Turned base with fine banded detail", "Table Lamps", 24], ["Textured Base Lamp", "", "Textured two-tone base, warm drum shade", "Table Lamps", 25], ["Carved Pattern Lamp", "", "Carved wood base with white inlay detail", "Table Lamps", 26], ["Carved Floral Lamp", "", "Hand-carved floral panels, open-form base", "Table Lamps", 27], ["Tripod Drum Lamp", "", "Solid wood tripod base, linen drum shade", "Table Lamps", 28], ["Cone Wood Lamp", "", "Tapered banded wood base, softly lit shade", "Table Lamps", 29], ["Turned Bedside Lamp", "", "Turned natural wood base, cylinder shade", "Table Lamps", 30], ["Turned Spindle Lamp", "", "Honey-finish wood, spindle neck and wide base", "Table Lamps", 31], ["Open-form Wood Lamp", "", "Sculpted open-loop base in natural wood", "Table Lamps", 32], ["Hand-carved Dash Lamp", "", "Dark wood base with carved dash pattern", "Table Lamps", 33], ["Weathered Open-form Lamp", "", "Open-form base in a weathered grey finish", "Table Lamps", 34], ["Dark Cylinder Lamp", "", "Slim dark wood cylinder base, beige shade", "Table Lamps", 35], ["Round Paddle Serving Board", "", "Solid wood board with a cut-out handle", "Kitchenware", 36], ["Sculpted Wooden Bowl", "", "Hand-shaped dark wood serving bowl", "Kitchenware", 37], ["Green Handled Tray", "", "Curved serving tray with cut-out handles", "Kitchenware", 38], ["Round Handled Board", "", "Natural wood board with a raised rim and handle", "Kitchenware", 39], ["Cheese & Charcuterie Board", "", "Natural wood board with a contrast edge", "Kitchenware", 40], ["Grey Round Platter", "", "Wide wooden platter in a soft grey finish", "Kitchenware", 41], ["Pizza Slice Tray", "", "Slice-shaped wooden serving tray in forest green", "Kitchenware", 42], ["Swirl Wooden Mirror", "", "Sculpted swirl frame with a distressed finish", "Home Decor", 43], ["Square Wooden Vase Set", "", "Two hand-finished vases in a warm red-wood tone", "Home Decor", 44], ["Wooden Charger Plates", "", "Set of four in natural, white, blue and navy finishes", "Home Decor", 45], ["Round-handle Serving Board", "", "Mango wood board with a white edge", "Home Decor", 46], ["Crossed-leg Tripod Table", "", "Dark round top on polished wooden legs", "Home Decor", 47], ["Carved Wall Shelf with Hooks", "", "Hand-carved panel, shelf and four metal hooks", "Home Decor", 48], ["Hammered Wooden Frame", "", "Hand-chiselled textured frame", "Home Decor", 49]];
+document.querySelectorAll("[data-bg]").forEach(function(e){e.style.backgroundImage="url("+IM[e.dataset.bg]+")"});
+var box=document.getElementById("products"),toast=document.getElementById("toast"),tt,w=0,lb=document.getElementById("lb");
+function say(m){toast.textContent=m;toast.classList.add("on");clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove("on")},1800)}
+P.forEach(function(p){
+var c=document.createElement("article");c.className="card";c.dataset.cat=p[3];
+var wa="https://wa.me/918077625193?text="+encodeURIComponent("Hi Woodenzone, I'd like to enquire about the "+p[0]+(p[1]?" ("+p[1]+")":"")+".");
+c.innerHTML='<img alt="'+p[0]+'" loading="lazy"><button class="wish" aria-label="Add to wishlist" aria-pressed="false">♥</button><h3>'+p[0]+'</h3><div class="meta">'+(p[1]?p[1]+" | ":"")+p[3].replace(/s$/,"")+'<br>'+p[2]+'</div><div class="row"><span class="meta">Price on request</span><a class="btn solid add" href="'+wa+'">Enquire</a></div>';
+var im=c.querySelector("img");im.src=IM[p[4]];
+im.onclick=function(){lb.querySelector("img").src=IM[p[4]];lb.showModal()};
+c.querySelector(".wish").onclick=function(e){var b=e.currentTarget,on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",on);w+=on?1:-1;document.getElementById("count").textContent=w;say(on?"Added to wishlist":"Removed from wishlist")};
+box.appendChild(c)});
+lb.onclick=function(){lb.close()};
+var chips=document.getElementById("chips");
+["All","Chairs","Side Tables","Console Tables","Sofas & Tables","Table Lamps","Kitchenware","Home Decor"].forEach(function(n,i){
+var b=document.createElement("button");b.textContent=n;b.setAttribute("aria-pressed",i==0);
+b.onclick=function(){chips.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});
+box.querySelectorAll(".card").forEach(function(c){c.style.display=(i==0||c.dataset.cat===n)?"":"none"})};
+chips.appendChild(b)});
+document.getElementById("lighting").onclick=function(){chips.querySelectorAll("button")[5].click()};
+document.getElementById("kitchen").onclick=function(){chips.querySelectorAll("button")[6].click()};
+document.getElementById("decor").onclick=function(){chips.querySelectorAll("button")[7].click()};
+var m=document.getElementById("menu"),nav=document.getElementById("nav");
+m.onclick=function(){var o=nav.classList.toggle("open");m.setAttribute("aria-expanded",o)};
+nav.onclick=function(){nav.classList.remove("open")};
+document.getElementById("nl").onsubmit=function(e){e.preventDefault();say("Thanks for subscribing");e.target.reset()};
+</script>
+</body></html>
