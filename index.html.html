@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Woodenzone – Crafted by Nature, Made for You</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@400;500&amp;display=swap">
+<script>document.documentElement.className="js"</script>
+<style>
+:root{--ivory:#FAF6EE;--cream:#F1E9DA;--beige:#E4D6BF;--walnut:#6B4A32;--choc:#2E1F16;--gold:#B08D4C;--wood:#A9794F;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+html{scroll-behavior:smooth;scroll-padding-top:130px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ivory);color:var(--choc);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.1;margin:0}
+h2{font-size:clamp(28px,4.5vw,42px);text-align:center}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+ul{margin:0;padding:0}li{list-style:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+section{padding:60px 0}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.js .rv.in{opacity:1;transform:none}
+[data-bg]{background-size:cover;background-position:center}
+.ann{background:var(--choc);color:var(--beige);font-size:12px;letter-spacing:.08em;text-align:center;padding:8px 12px}
+header{position:sticky;top:0;z-index:30;background:rgba(250,246,238,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--beige)}
+.top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px}
+.top .l,.top .r{display:flex;gap:18px;font-size:14px;align-items:center}
+.top .r{justify-content:flex-end}
+.top button{background:none;border:0;padding:0}
+.logo{display:flex;align-items:center;gap:12px;font-family:"Cormorant Garamond",serif;font-size:26px;letter-spacing:.18em;font-weight:600}
+.logo i{color:var(--gold);font-style:normal}
+.mark{width:42px;height:48px;flex:none}footer .mark{width:52px;height:60px}
+#menu{display:none}
+.nav{display:flex;justify-content:center;gap:34px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;border-top:1px solid var(--beige)}
+.nav>li{position:relative;padding:13px 0}
+.nav>li>a{background:linear-gradient(var(--gold),var(--gold)) 0 100%/0 1px no-repeat;transition:background-size .3s;padding-bottom:3px}
+.nav>li>a:hover{background-size:100% 1px}
+.mega{position:absolute;left:50%;top:100%;transform:translate(-50%,10px);opacity:0;visibility:hidden;transition:.3s;background:var(--ivory);border:1px solid var(--beige);box-shadow:0 20px 40px rgba(46,31,22,.15);padding:22px;display:flex;gap:26px;width:max-content;text-transform:none;letter-spacing:0;font-size:15px}
+.nav>li:hover .mega{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.mega li{padding:5px 0}.mega a:hover{color:var(--gold)}
+.mega .pic{width:150px;height:170px;border-radius:75px 75px 12px 12px}
+.srch{display:none;padding:10px 22px 14px}.srch.on{display:block}
+.srch input{width:100%;padding:12px 20px;border-radius:40px;border:1px solid var(--walnut);background:var(--ivory);font:inherit}
+.btn{display:inline-block;padding:14px 30px;border-radius:40px;border:1px solid currentColor;font-size:14px;background:none;transition:.3s}
+.btn.solid{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn:hover{background:var(--choc);border-color:var(--choc);color:#fff}
+.hero{padding:0;position:relative;height:min(78vh,680px);overflow:hidden;background:var(--choc)}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1s}
+.slide.on{opacity:1;z-index:1}
+.slide .bg{position:absolute;inset:0;background-position:center 40%}
+.slide.on .bg{animation:kb 9s ease-out forwards}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.12)}}
+.slide:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,20,12,.72),rgba(30,20,12,.08) 65%)}
+.cap{position:absolute;z-index:2;left:max(22px,calc(50% - 598px));bottom:17%;max-width:540px;color:#fff;padding-right:22px}
+.cap small{letter-spacing:.3em;font-size:12px;text-transform:uppercase;color:#E9D3A0}
+.cap h1,.cap .t{font:500 clamp(40px,6.5vw,76px)/1.05 "Cormorant Garamond",Georgia,serif;margin:10px 0 14px}
+.cap p{margin:0 0 26px;font-size:18px;color:var(--cream)}
+.slide.on .cap>*{animation:up .9s both}.slide.on .cap>:nth-child(2){animation-delay:.15s}.slide.on .cap>:nth-child(3){animation-delay:.3s}.slide.on .cap>:nth-child(4){animation-delay:.45s}
+@keyframes up{from{opacity:0;transform:translateY(24px)}}
+.slide.sp{background:linear-gradient(110deg,#F1E9DA,#E4D6BF)}.slide.sp:after{display:none}
+.slide.sp .cap{color:var(--choc)}.slide.sp .cap small{color:var(--gold)}.slide.sp .cap p{color:var(--walnut)}
+.slide.sp .chair{position:absolute;right:max(22px,calc(50% - 560px));bottom:0;height:94%;max-width:46%;object-fit:contain;mix-blend-mode:multiply;animation:fl 6s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-10px)}}
+.arr{position:absolute;top:50%;z-index:3;width:44px;height:44px;border-radius:50%;border:0;background:rgba(250,246,238,.85);margin-top:-22px;font-size:18px}
+.arr.p{left:18px}.arr.n{right:18px}
+.dots{position:absolute;bottom:22px;left:0;right:0;z-index:3;display:flex;gap:10px;justify-content:center}
+.dots button{width:34px;height:3px;border:0;background:rgba(255,255,255,.5);padding:0}.dots .on{background:var(--gold)}
+.tiles{display:flex;gap:22px;overflow-x:auto;padding:30px 0 6px;scroll-snap-type:x mandatory;scrollbar-width:none;justify-content:flex-start}
+.tile{flex:0 0 160px;text-align:center;scroll-snap-align:start}
+.tile .im{height:200px;border-radius:80px 80px 14px 14px;overflow:hidden}
+.tile .im div{height:100%;transition:transform .7s}
+.tile:hover .im div{transform:scale(1.14)}
+.tile h3{font-size:20px;margin-top:12px}
+.tiles .tile:first-child{margin-left:auto}.tiles .tile:last-child{margin-right:auto}
+.fsub{display:none;margin-top:6px;padding-top:18px;border-top:1px solid var(--beige)}.fsub.on{display:block;animation:up .5s both}
+.fsub .tile{flex-basis:120px}.fsub .im{height:140px;border-radius:60px 60px 12px 12px}.fsub h3{font-size:18px}
+.fsub p{text-align:center;margin:0;font-size:12px;letter-spacing:.25em;color:var(--walnut)}
+.sh .more{white-space:nowrap}.sh{flex-wrap:wrap}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:22px}
+.sh h2{text-align:left}
+.sh .c{display:flex;gap:10px;align-items:center;font-size:14px}
+.sh .c button{background:none;border:1px solid var(--walnut);border-radius:50%;width:38px;height:38px}
+.sh .c .more{border:0;border-bottom:1px solid var(--gold);border-radius:0;width:auto;height:auto;padding:0 0 2px;margin-right:8px}
+.car{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:8px}
+.car .card{flex:0 0 min(262px,70vw);scroll-snap-align:start}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:28px}
+.card{position:relative}
+.ph{position:relative;overflow:hidden;border-radius:16px;background:var(--beige);aspect-ratio:4/5}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s;cursor:zoom-in}
+.card:hover .ph img{transform:scale(1.09)}
+.tag{position:absolute;top:12px;left:12px;background:var(--choc);color:var(--cream);font-size:11px;letter-spacing:.1em;padding:3px 11px;border-radius:20px;text-transform:uppercase}
+.wish{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:0;background:var(--ivory);font-size:17px;color:var(--walnut)}
+.wish[aria-pressed=true]{color:#9B2D20}
+.quick{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(250,246,238,.96);text-align:center;padding:10px;border-radius:30px;font-size:13px;transform:translateY(150%);transition:.4s}
+.card:hover .quick{transform:none}
+@media(hover:none){.quick{transform:none}}
+.card h3{font-size:22px;margin-top:12px}
+.meta{font-size:13px;color:var(--walnut)}
+.mq{background:var(--choc);color:var(--beige);overflow:hidden;padding:18px 0;white-space:nowrap}
+.mq div{display:inline-block;animation:mq 32s linear infinite;font:500 22px "Cormorant Garamond",serif;letter-spacing:.12em}
+.mq span{margin:0 28px;color:var(--gold)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mos{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:16px;margin-top:30px}
+.mos a{position:relative;overflow:hidden;border-radius:16px}
+.mos a:first-child{grid-column:span 2;grid-row:span 2}
+.mos div{position:absolute;inset:0;transition:transform .9s}
+.mos a:hover div{transform:scale(1.1)}
+.mos a:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(30,20,12,.78))}
+.mos span{position:absolute;left:18px;bottom:16px;z-index:2;color:#fff;font:500 28px "Cormorant Garamond",serif}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:22px}
+.chips button{padding:8px 18px;border-radius:30px;border:1px solid var(--walnut);background:none;font-size:14px}
+.subs button{border-color:var(--gold);font-size:13px;padding:6px 15px}.subs button[aria-pressed=true]{background:var(--gold);border-color:var(--gold);color:#fff}
+.chips button[aria-pressed=true]{background:var(--choc);color:var(--ivory);border-color:var(--choc)}
+#none{display:none;text-align:center;color:var(--walnut);margin-top:30px}
+.why{background:var(--choc);color:var(--cream)}
+.why h2{color:var(--cream)}
+.why .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:40px;text-align:center}
+.why h3{font-size:26px;color:var(--gold);margin-bottom:8px}
+.why p{margin:0;font-size:15px;color:var(--beige)}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.story .im{height:440px;border-radius:200px 200px 24px 24px;overflow:hidden}
+.story .im div{height:100%;transition:transform .9s}.story .im:hover div{transform:scale(1.08)}
+.story h2{text-align:left}.story p{color:var(--walnut)}
+.steps{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;padding:0}
+.steps li{border:1px solid var(--gold);border-radius:30px;padding:5px 14px;font-size:13px}
+.news{background:var(--beige);text-align:center}
+.news small{letter-spacing:.3em;font-size:12px;color:var(--walnut)}
+.news form{display:flex;gap:10px;justify-content:center;margin-top:26px;flex-wrap:wrap}
+.news input{padding:14px 20px;border-radius:40px;border:1px solid var(--walnut);background:var(--ivory);min-width:260px;font:inherit}
+.hill{display:block;width:100%;height:50px;margin-bottom:-1px;background:var(--beige)}
+footer{background:#241810;color:var(--beige);padding:50px 0 30px;font-size:14px}
+footer .cols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
+footer h4{font:500 20px "Cormorant Garamond",serif;color:var(--gold);margin:0 0 10px}
+footer a{display:block;margin:5px 0}footer a:hover{color:var(--gold)}
+footer .logo{color:var(--cream)}
+.copy{margin-top:40px;border-top:1px solid #4a3626;padding-top:18px;font-size:12px}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));background:#25613F;color:#fff;border-radius:40px;padding:12px 20px;font-size:14px;z-index:30;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#toast{position:fixed;left:50%;bottom:calc(80px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--choc);color:var(--ivory);padding:10px 20px;border-radius:30px;font-size:14px;opacity:0;transition:.3s;z-index:40;pointer-events:none}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+dialog{border:0;padding:0;background:none;max-width:min(94vw,760px)}dialog::backdrop{background:rgba(30,20,12,.82)}
+dialog img{display:block;max-width:100%;max-height:88vh;margin:auto;border-radius:12px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .rv{opacity:1;transform:none}}
+@media(max-width:900px){
+#menu{display:block}
+.nav{display:none;flex-direction:column;gap:0;padding:6px 22px 14px}
+.nav.open{display:flex}
+.nav>li{padding:9px 0}
+.mega{position:static;opacity:1;visibility:visible;transform:none;border:0;box-shadow:none;padding:6px 0 0 14px}
+.mega .pic{display:none}.nav>li:hover .mega{transform:none}
+.logo{font-size:20px;gap:8px}.mark{width:34px;height:39px}
+.hero{height:64vh}.cap{bottom:15%}.arr{display:none}
+.grid{grid-template-columns:repeat(2,1fr);gap:16px}
+.mos{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
+.why .cols,.story,footer .cols{grid-template-columns:1fr 1fr}
+.story{grid-template-columns:1fr}.story .im{height:340px}
+section{padding:46px 0}
+}
+@media(max-width:900px){.slide.sp .chair{height:64%;max-width:56%;right:0;bottom:9%}.slide.sp .cap{max-width:56%}.slide.sp .cap .t{font-size:34px}.slide.sp .cap p{display:none}}
+@media(max-width:600px){.top .l,.top .r{gap:10px;font-size:13px}.wl{display:none}.logo{font-size:15px;letter-spacing:.08em;gap:6px}.mark{width:30px;height:34px}.sh h2{font-size:30px}}
+@media(max-width:520px){.why .cols,footer .cols{grid-template-columns:1fr}}
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="wz-wood" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8A5E3B"/><stop offset="1" stop-color="#C8996B"/></linearGradient>
+<linearGradient id="wz-gold" gradientUnits="userSpaceOnUse" x1="170" y1="0" x2="430" y2="0">
+<stop offset="0" stop-color="#9A7A3E"/><stop offset=".42" stop-color="#B08D4C"/><stop offset=".5" stop-color="#FFF1C2"/><stop offset=".58" stop-color="#B08D4C"/><stop offset="1" stop-color="#9A7A3E"/>
+<animateTransform attributeName="gradientTransform" type="translate" values="-300 0;300 0" dur="4.5s" repeatCount="indefinite"/>
+</linearGradient>
+<radialGradient id="wz-glow" cx="309" cy="268" r="115" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#FFD98A" stop-opacity=".85"/><stop offset=".5" stop-color="#E8A94F" stop-opacity=".25"/><stop offset="1" stop-color="#E8A94F" stop-opacity="0"/>
+<animate attributeName="r" values="105;128;105" dur="3.5s" repeatCount="indefinite"/>
+</radialGradient>
+<linearGradient id="wz-room" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A3425"/><stop offset="1" stop-color="#2A1B12"/></linearGradient>
+<linearGradient id="wz-shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF3D1"/><stop offset="1" stop-color="#F0CF8E"/></linearGradient>
+<clipPath id="wz-arch"><path d="M170 400V230A130 130 0 0 1 430 230V400Z"/></clipPath>
+<clipPath id="wz-mir"><circle cx="300" cy="178" r="25"/></clipPath>
+
+<symbol id="wz-mark" viewBox="162 92 276 316"><g clip-path="url(#wz-arch)">
+<path d="M170 400V230A130 130 0 0 1 430 230V400Z" fill="url(#wz-room)"/>
+<rect x="170" y="100" width="260" height="300" fill="url(#wz-glow)"/>
+<rect x="170" y="396" width="260" height="4" fill="#B08D4C" opacity=".6"/>
+
+<!-- home decor: wall mirror -->
+<circle cx="300" cy="178" r="30" fill="none" stroke="url(#wz-gold)" stroke-width="4"/>
+<circle cx="300" cy="178" r="25" fill="#E9DCC3" opacity=".92"/>
+<g clip-path="url(#wz-mir)">
+<rect x="262" y="130" width="12" height="100" fill="#fff" opacity=".6" transform="rotate(25 300 178)">
+<animate attributeName="x" values="255;255;340" keyTimes="0;.45;1" dur="5s" repeatCount="indefinite"/>
+</rect>
+</g>
+
+<!-- furniture group: chair + table, with lamp and vase -->
+<g transform="translate(27 0)">
+<animateTransform attributeName="transform" type="translate" from="27 16" to="27 0" dur="1.4s" fill="freeze"/>
+<!-- chair -->
+<rect x="186" y="322" width="7" height="50" rx="3" fill="url(#wz-wood)"/>
+<rect x="186" y="366" width="44" height="8" rx="3" fill="url(#wz-wood)"/>
+<rect x="188" y="374" width="5" height="26" fill="#A9794F"/>
+<rect x="222" y="374" width="5" height="26" fill="#A9794F"/>
+<!-- table -->
+<rect x="240" y="338" width="120" height="9" rx="4.5" fill="url(#wz-wood)"/>
+<path d="M252 347L242 400M348 347L358 400M300 347V400" stroke="#A9794F" stroke-width="6" stroke-linecap="round" fill="none"/>
+<!-- lamp -->
+<circle cx="282" cy="318" r="20" fill="url(#wz-wood)"/>
+<rect x="279" y="288" width="6" height="12" fill="#B08D4C"/>
+<polygon points="256,290 308,290 298,248 266,248" fill="url(#wz-shade)" stroke="#B08D4C" stroke-width="1.5">
+<animate attributeName="fill-opacity" values="1;.82;1" dur="3.5s" repeatCount="indefinite"/>
+</polygon>
+<!-- vase and branch -->
+<path d="M326 338Q320 318 331 306V296H341V306Q352 318 346 338Z" fill="#B08D4C"/>
+<path d="M336 296Q338 276 354 266M336 296Q334 278 322 270" stroke="#8FA67A" stroke-width="2" fill="none" stroke-linecap="round"/>
+<ellipse cx="347" cy="277" rx="7" ry="3.5" transform="rotate(-40 347 277)" fill="#8FA67A"/>
+<ellipse cx="352" cy="268" rx="6" ry="3" transform="rotate(-30 352 268)" fill="#8FA67A"/>
+<ellipse cx="327" cy="278" rx="7" ry="3.5" transform="rotate(40 327 278)" fill="#8FA67A"/>
+</g>
+
+<!-- floating light specks -->
+<circle cx="280" cy="236" r="1.8" fill="#FFE3A3"><animate attributeName="cy" values="246;216" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/></circle>
+<circle cx="318" cy="240" r="1.4" fill="#FFE3A3"><animate attributeName="cy" values="248;212" dur="5s" begin="1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="5s" begin="1s" repeatCount="indefinite"/></circle>
+<circle cx="299" cy="232" r="1.2" fill="#FFE3A3"><animate attributeName="cy" values="244;210" dur="4.5s" begin="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="4.5s" begin="2s" repeatCount="indefinite"/></circle>
+</g>
+
+<!-- arch outline draws on, then a gold shimmer sweeps across -->
+<path d="M170 400V230A130 130 0 0 1 430 230V400" pathLength="1" fill="none" stroke="url(#wz-gold)" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 1">
+<animate attributeName="stroke-dashoffset" from="1" to="0" dur="2.2s" fill="freeze"/>
+</path>
+<path d="M182 400V230A118 118 0 0 1 418 230V400" fill="none" stroke="#B08D4C" stroke-width="1.2" opacity=".55"/>
+<path d="M150 400H450" stroke="url(#wz-gold)" stroke-width="3" stroke-linecap="round"/>
+
+</symbol></defs></svg>
+
+<div class="ann">Handcrafted in Saharanpur, India &nbsp;·&nbsp; Order or enquire on WhatsApp +91 8077625193</div>
+<header>
+<div class="wrap top"><div class="l"><button id="menu" aria-expanded="false">Menu</button><button id="sbtn">Search</button></div>
+<a class="logo" href="#top"><svg class="mark" aria-hidden="true"><use href="#wz-mark"/></svg><span>WOODEN<i>ZONE</i></span></a>
+<div class="r"><button aria-label="Wishlist"><span class="wl">Wishlist </span>(<span id="count">0</span>)</button></div></div>
+<div class="wrap"><ul class="nav" id="nav">
+<li><a href="#shop" data-f="Furniture">Furniture</a><div class="mega"><ul><li><a href="#shop" data-f="Sofa">Sofa</a></li><li><a href="#shop" data-f="Side Table">Side Table</a></li><li><a href="#shop" data-f="Console">Console</a></li><li><a href="#shop" data-f="Chair">Chair</a></li><li><a href="#shop" data-f="Dining Table">Dining Table</a></li></ul><div class="pic" data-bg="13"></div></div></li>
+<li><a href="#shop" data-f="Dining Table">Dining Table</a></li>
+<li><a href="#shop" data-f="Lighting">Lighting</a><div class="mega"><ul><li><a href="#shop" data-f="Table Lamp">Table Lamp</a></li><li><a href="#shop" data-f="Floor Lamp">Floor Lamp</a></li></ul><div class="pic" data-bg="55"></div></div></li>
+<li><a href="#shop" data-f="Home Decor">Home Decor</a></li>
+<li><a href="#shop" data-f="Kitchenware">Kitchenware</a><div class="mega"><ul><li><a href="#shop" data-f="Tray">Tray</a></li><li><a href="#shop" data-f="Bowl">Bowl</a></li><li><a href="#shop" data-f="Chopping Board">Chopping Board</a></li></ul><div class="pic" data-bg="76"></div></div></li>
+<li><a href="#shop" data-f="Saharanpur Special" style="color:var(--gold)">Saharanpur Special</a></li>
+<li><a href="#shop" data-f="All">New Arrivals</a></li>
+<li><a href="#about">About Us</a></li>
+<li><a href="#contact">Contact</a></li></ul></div>
+<div class="srch" id="srch"><input id="q" type="search" placeholder="Search furniture, lamps, decor, kitchenware" aria-label="Search"></div>
+</header>
+
+<main id="top">
+<section class="hero" id="hero">
+<div class="slide on"><div class="bg" data-bg="6"></div><div class="cap"><small>Woodenzone</small><h1>Crafted by Nature, Made for You.</h1><p>Timeless wooden creations for beautiful everyday living.</p><a class="btn solid" href="#shop" data-f="All">Shop the Collection</a></div></div>
+<div class="slide sp"><img class="chair" data-src="64" alt="Maharaja chair"><div class="cap"><small>Saharanpur Special</small><div class="t">The Maharaja Chair</div><p>Hand-carved wood furniture from Saharanpur, in a gold finish.</p><a class="btn solid" href="#shop" data-f="Saharanpur Special">Explore Saharanpur Special</a></div></div>
+<div class="slide"><div class="bg" data-bg="26"></div><div class="cap"><small>Lighting</small><div class="t">Illuminate Your Space With Style</div><p>Handcrafted wooden table lamps with a warm glow.</p><a class="btn solid" href="#shop" data-f="Lighting">Explore Lighting</a></div></div>
+<div class="slide"><div class="bg" data-bg="43"></div><div class="cap"><small>Home Decor</small><div class="t">Details That Make a Home</div><p>Bring warmth and character home.</p><a class="btn solid" href="#shop" data-f="Home Decor">Explore Home Decor</a></div></div>
+<div class="slide"><div class="bg" data-bg="36"></div><div class="cap"><small>Kitchenware</small><div class="t">Crafted for Everyday Moments</div><p>Natural craftsmanship for everyday living.</p><a class="btn solid" href="#shop" data-f="Kitchenware">Explore Kitchenware</a></div></div>
+<button class="arr p" id="pv" aria-label="Previous">&#8249;</button><button class="arr n" id="nx" aria-label="Next">&#8250;</button>
+<div class="dots" id="dots"></div>
+</section>
+
+<section><div class="wrap"><h2>Shop by category</h2>
+<div class="tiles">
+<a class="tile" href="#fsub" id="ftile"><div class="im"><div data-bg="13"></div></div><h3>Furniture &#9662;</h3></a>
+<a class="tile" href="#shop" data-f="Dining Table"><div class="im"><div data-bg="60"></div></div><h3>Dining Table</h3></a>
+<a class="tile" href="#lsub" id="ltile"><div class="im"><div data-bg="26"></div></div><h3>Lighting &#9662;</h3></a>
+<a class="tile" href="#shop" data-f="Home Decor"><div class="im"><div data-bg="43"></div></div><h3>Home Decor</h3></a>
+<a class="tile" href="#ksub" id="ktile"><div class="im"><div data-bg="36"></div></div><h3>Kitchenware &#9662;</h3></a>
+<a class="tile" href="#shop" data-f="Saharanpur Special"><div class="im"><div data-bg="64"></div></div><h3>Saharanpur Special</h3></a>
+</div>
+<div class="fsub" id="fsub"><p>FURNITURE</p><div class="tiles">
+<a class="tile" href="#shop" data-f="Sofa"><div class="im"><div data-bg="6"></div></div><h3>Sofa</h3></a>
+<a class="tile" href="#shop" data-f="Side Table"><div class="im"><div data-bg="0"></div></div><h3>Side Table</h3></a>
+<a class="tile" href="#shop" data-f="Console"><div class="im"><div data-bg="1"></div></div><h3>Console</h3></a>
+<a class="tile" href="#shop" data-f="Chair"><div class="im"><div data-bg="2"></div></div><h3>Chair</h3></a>
+<a class="tile" href="#shop" data-f="Dining Table"><div class="im"><div data-bg="60"></div></div><h3>Dining Table</h3></a>
+<a class="tile" href="#shop" data-f="Furniture"><div class="im"><div data-bg="13"></div></div><h3>All Furniture</h3></a>
+</div></div>
+<div class="fsub" id="ksub"><p>KITCHENWARE</p><div class="tiles"><a class="tile" href="#shop" data-f="Tray"><div class="im"><div data-bg="80"></div></div><h3>Tray</h3></a><a class="tile" href="#shop" data-f="Bowl"><div class="im"><div data-bg="69"></div></div><h3>Bowl</h3></a><a class="tile" href="#shop" data-f="Chopping Board"><div class="im"><div data-bg="76"></div></div><h3>Chopping Board</h3></a><a class="tile" href="#shop" data-f="Kitchenware"><div class="im"><div data-bg="36"></div></div><h3>All Kitchenware</h3></a></div></div>
+<div class="fsub" id="lsub"><p>LIGHTING</p><div class="tiles">
+<a class="tile" href="#shop" data-f="Table Lamp"><div class="im"><div data-bg="26"></div></div><h3>Table Lamp</h3></a>
+<a class="tile" href="#shop" data-f="Floor Lamp"><div class="im"><div data-bg="55"></div></div><h3>Floor Lamp</h3></a>
+<a class="tile" href="#shop" data-f="Lighting"><div class="im"><div data-bg="29"></div></div><h3>All Lighting</h3></a>
+</div></div>
+</div></div></section>
+
+<div id="cars"></div>
+
+<div class="mq" id="mq"><div>Natural Materials<span>◆</span>Skilled Craftsmanship<span>◆</span>Made in Saharanpur<span>◆</span>Built for Everyday Living<span>◆</span></div></div>
+
+<section><div class="wrap"><h2>Shop by collection</h2>
+<div class="mos">
+<a href="#shop" data-f="Lighting"><div data-bg="29"></div><span>Lighting</span></a>
+<a href="#shop" data-f="Furniture"><div data-bg="13"></div><span>Furniture</span></a>
+<a href="#shop" data-f="Kitchenware"><div data-bg="40"></div><span>Kitchenware</span></a>
+<a href="#shop" data-f="Home Decor"><div data-bg="43"></div><span>Home Decor</span></a>
+<a href="#shop" data-f="Chair"><div data-bg="19"></div><span>Chair</span></a>
+</div></div></section>
+
+<section id="shop" style="background:var(--cream)"><div class="wrap">
+<h2>Made for Modern Living</h2>
+<div class="chips" id="chips"></div>
+<div class="chips subs" id="subs"></div>
+<div class="grid" id="grid"></div>
+<p id="none">No products match your search.</p>
+</div></section>
+
+<section class="why"><div class="wrap"><h2>Why Woodenzone?</h2>
+<div class="cols">
+<div><h3>Natural Materials</h3><p>Carefully selected wood and natural materials.</p></div>
+<div><h3>Skilled Craftsmanship</h3><p>Made with attention to detail and finishing.</p></div>
+<div><h3>Made in Saharanpur</h3><p>Crafted in our manufacturing unit in Saharanpur, India.</p></div>
+<div><h3>Built for Everyday Living</h3><p>Functional designs made to complement modern homes.</p></div>
+</div></div></section>
+
+<section id="about"><div class="wrap story">
+<div class="im"><div data-bg="19"></div></div>
+<div><h2>From Wood to Your Home.</h2>
+<p>At Woodenzone, we combine traditional craftsmanship with contemporary design to create furniture, lighting, kitchenware and home décor that bring warmth and character to everyday spaces.</p>
+<p>Woodenzone is a Saharanpur-based wooden products manufacturer. We work with exporters and established companies while developing our own collection of premium wooden products.</p>
+<ul class="steps"><li>Wood selection</li><li>Cutting</li><li>Shaping</li><li>Sanding</li><li>Finishing</li><li>Quality inspection</li></ul></div>
+</div></section>
+
+<section class="news"><div class="wrap"><small>BE THE FIRST TO KNOW</small>
+<h2>Bring Natural Beauty Home.</h2>
+<p style="color:var(--walnut)">Be the first to discover new collections, handcrafted pieces and exclusive Woodenzone offers.</p>
+<form id="nl"><input type="email" required placeholder="Enter your email" aria-label="Email"><button class="btn solid">Subscribe</button></form>
+</div></section>
+</main>
+
+<svg class="hill" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V30C150 0 300 10 450 30S750 55 900 30 1100 5 1200 25V60Z" fill="#241810"/></svg>
+<footer id="contact"><div class="wrap">
+<div class="cols">
+<div><div class="logo"><svg class="mark" aria-hidden="true"><use href="#wz-mark"/></svg><span>WOODEN<i>ZONE</i></span></div><p>Crafted by Nature, Made for You.</p></div>
+<div><h4>Shop</h4><a href="#shop" data-f="Furniture">Furniture</a><a href="#shop" data-f="Dining Table">Dining Table</a><a href="#shop" data-f="Lighting">Lighting</a><a href="#shop" data-f="Home Decor">Home Decor</a><a href="#shop" data-f="Kitchenware">Kitchenware</a><a href="#shop" data-f="Saharanpur Special">Saharanpur Special</a></div>
+<div><h4>Company</h4><a href="#about">About Us</a><a href="#about">Our Craft</a><a href="https://instagram.com/woodenzone">Instagram</a></div>
+<div><h4>Contact</h4><a href="tel:+918077625193">+91 8077625193</a><a href="https://wa.me/918077625193">WhatsApp enquiry</a><a href="mailto:mywoodenzone@gmail.com">mywoodenzone@gmail.com</a><span>Saharanpur, India</span></div>
+</div>
+<div class="copy">© 2026 Woodenzone. All rights reserved.</div>
+</div></footer>
+
+<a class="wa" href="https://wa.me/918077625193" aria-label="Chat on WhatsApp">WhatsApp us</a>
+<dialog id="lb"><img alt=""></dialog>
+<div id="toast" role="status"></div>
+
+<script>
+var IM=["img-01.jpg", "img-02.jpg", "img-03.jpg", "img-04.jpg", "img-05.jpg", "img-06.jpg", "img-07.jpg", "img-08.jpg", "img-09.jpg", "img-10.jpg", "img-11.jpg", "img-12.jpg", "img-13.jpg", "img-14.jpg", "img-15.jpg", "img-16.jpg", "img-17.jpg", "img-18.jpg", "img-19.jpg", "img-20.jpg", "img-21.jpg", "img-22.jpg", "img-23.jpg", "img-24.jpg", "img-25.jpg", "img-26.jpg", "img-27.jpg", "img-28.jpg", "img-29.jpg", "img-30.jpg", "img-31.jpg", "img-32.jpg", "img-33.jpg", "img-34.jpg", "img-35.jpg", "img-36.jpg", "img-37.jpg", "img-38.jpg", "img-39.jpg", "img-40.jpg", "img-41.jpg", "img-42.jpg", "img-43.jpg", "img-44.jpg", "img-45.jpg", "img-46.jpg", "img-47.jpg", "img-48.jpg", "img-49.jpg", "img-50.jpg", "img-51.jpg", "img-52.jpg", "img-53.jpg", "img-54.jpg", "img-55.jpg", "img-56.jpg", "img-57.jpg", "img-58.jpg", "img-59.jpg", "img-60.jpg", "img-61.jpg", "img-62.jpg", "img-63.jpg", "img-64.jpg", "img-65.jpg", "img-66.jpg", "img-67.jpg", "img-68.jpg", "img-69.jpg", "img-70.jpg", "img-71.jpg", "img-72.jpg", "img-73.jpg", "img-74.jpg", "img-75.jpg", "img-76.jpg", "img-77.jpg", "img-78.jpg", "img-79.jpg", "img-80.jpg", "img-81.jpg", "img-82.jpg"];
+// Product list: [name, sku, description, category, imageIndex]
+var P=[["Maharaja Chair", "", "Tall tufted back, carved gold-finish frame and curved legs", "Saharanpur Special", 64], ["Sage Chaise with Gold Carving", "", "Tufted sage upholstery, cream and gold carved frame, tasselled bolsters", "Saharanpur Special", 65], ["Gold Carved Chaise Lounge", "", "Gold-finish carved frame with cream tufted upholstery", "Saharanpur Special", 66], ["Painted Carved Armchair", "", "Cream frame with gold carving and painted floral detail, tufted back", "Saharanpur Special", 67], ["Round Side Table", "SKU 8", "Premium wood, natural finish. 45 x 45 x 50 cm", "Side Table", 0], ["Three-tier Console Table", "SKU 3", "Open shelves with cross-braced sides", "Console", 1], ["Cane-back Chair", "SKU 11", "Solid wood frame, cane back, cream seat", "Chair", 2], ["Carved Nesting Tables", "SKU 7", "Hand-carved panels, natural wood finish", "Side Table", 3], ["Green Upholstered Chair", "SKU WZ-06", "Solid wood legs, curved green back", "Chair", 4], ["Fluted Round Table", "SKU 1", "Solid wood, natural PU finish", "Side Table", 5], ["Velvet Sofa", "", "Wooden frame, mustard velvet, bolster arms", "Sofa", 6], ["Cushioned Armchair", "SKU 10", "Solid wood frame, cream upholstery", "Chair", 7], ["Cross-leg Console Table", "SKU 2", "Curved crossed legs, premium finish", "Console", 8], ["Cane Armchair", "SKU 9", "Cane back, green seat, walnut frame", "Chair", 9], ["Teal Half-round Console", "SKU 1", "Hand-finished with carved leaf details", "Console", 10], ["C-shape Side Table", "SKU 2", "Whitewashed finish. 45 x 45 x 60 cm", "Side Table", 11], ["Tripod Side Table", "SKU 9", "Premium wood, natural finish. 45 x 45 x 50 cm", "Side Table", 12], ["Rope-back Daybed", "", "Teak-tone frame, woven rope back, cream cushion", "Sofa", 13], ["Pedestal Side Table", "SKU 4", "Turned pedestal, natural wood finish", "Side Table", 14], ["Bobbin Side Table", "SKU 1", "Turned bobbin base. 45 x 45 x 60 cm", "Side Table", 15], ["Slatted Side Table", "SKU 3", "Slatted top. 45 x 45 x 45 cm", "Side Table", 16], ["Scalloped Side Table", "SKU 6", "Scalloped top. 45 x 45 x 60 cm", "Side Table", 17], ["Light Walnut Console Table", "SKU 4", "Chunky solid wood, light walnut finish", "Console", 18], ["Round Armchair", "", "Solid wood frame, soft cream upholstery", "Chair", 19], ["Black Turned Lamp", "", "Dark wood base, natural linen drum shade", "Table Lamp", 20], ["Ribbed Dark Lamp", "", "Ribbed dark-finish base, beige drum shade", "Table Lamp", 21], ["Whitewash Ribbed Lamp", "", "Whitewashed ribbed round base, cream shade", "Table Lamp", 22], ["Sphere Wood Lamp", "", "Polished round wood base, tapered shade", "Table Lamp", 23], ["Banded Round Lamp", "", "Turned base with fine banded detail", "Table Lamp", 24], ["Textured Base Lamp", "", "Textured two-tone base, warm drum shade", "Table Lamp", 25], ["Carved Pattern Lamp", "", "Carved wood base with white inlay detail", "Table Lamp", 26], ["Carved Floral Lamp", "", "Hand-carved floral panels, open-form base", "Table Lamp", 27], ["Tripod Drum Lamp", "", "Solid wood tripod base, linen drum shade", "Table Lamp", 28], ["Cone Wood Lamp", "", "Tapered banded wood base, softly lit shade", "Table Lamp", 29], ["Turned Bedside Lamp", "", "Turned natural wood base, cylinder shade", "Table Lamp", 30], ["Turned Spindle Lamp", "", "Honey-finish wood, spindle neck and wide base", "Table Lamp", 31], ["Open-form Wood Lamp", "", "Sculpted open-loop base in natural wood", "Table Lamp", 32], ["Hand-carved Dash Lamp", "", "Dark wood base with carved dash pattern", "Table Lamp", 33], ["Weathered Open-form Lamp", "", "Open-form base in a weathered grey finish", "Table Lamp", 34], ["Dark Cylinder Lamp", "", "Slim dark wood cylinder base, beige shade", "Table Lamp", 35], ["Round Paddle Serving Board", "", "Solid wood board with a cut-out handle", "Chopping Board", 36], ["Sculpted Wooden Bowl", "", "Hand-shaped dark wood serving bowl", "Bowl", 37], ["Green Handled Tray", "", "Curved serving tray with cut-out handles", "Tray", 38], ["Round Handled Board", "", "Natural wood board with a raised rim and handle", "Chopping Board", 39], ["Cheese & Charcuterie Board", "", "Natural wood board with a contrast edge", "Chopping Board", 40], ["Grey Round Platter", "", "Wide wooden platter in a soft grey finish", "Tray", 41], ["Pizza Slice Tray", "", "Slice-shaped wooden serving tray in forest green", "Tray", 42], ["Swirl Wooden Mirror", "", "Sculpted swirl frame with a distressed finish", "Home Decor", 43], ["Square Wooden Vase Set", "", "Two hand-finished vases in a warm red-wood tone", "Home Decor", 44], ["Wooden Charger Plates", "", "Set of four in natural, white, blue and navy finishes", "Home Decor", 45], ["Round-handle Serving Board", "", "Mango wood board with a white edge", "Home Decor", 46], ["Crossed-leg Tripod Table", "", "Dark round top on polished wooden legs", "Home Decor", 47], ["Carved Wall Shelf with Hooks", "", "Hand-carved panel, shelf and four metal hooks", "Home Decor", 48], ["Hammered Wooden Frame", "", "Hand-chiselled textured frame", "Home Decor", 49], ["Twin-arm Floor Lamp", "", "Two adjustable arms with linen drum shades", "Floor Lamp", 50], ["Floor Lamp with Side Shelf", "", "Slim wooden pole with a handy side shelf", "Floor Lamp", 51], ["Three-shelf Tripod Floor Lamp", "", "Slim A-frame legs with three shelves", "Floor Lamp", 52], ["Stacked Block Floor Lamp", "", "Stacked wooden balls and blocks, tapered shade", "Floor Lamp", 53], ["Floor Lamp with Round Shelves", "", "Wooden pole with two round shelves", "Floor Lamp", 54], ["Wooden Tripod Floor Lamp", "", "Tapered wooden legs, soft linen shade", "Floor Lamp", 55], ["Classic Pole Floor Lamp", "", "Smooth wooden pole on a round base, drum shade", "Floor Lamp", 56], ["Tripod Floor Lamp with Shelf", "", "Wooden tripod legs with a shelf, tapered shade", "Floor Lamp", 57], ["Floor Lamp with Side Table", "", "Wooden floor lamp rising from a tripod side table", "Floor Lamp", 58], ["Pedestal Oval Dining Set", "", "Oval wood table on twin drum bases with 3 upholstered chairs", "Dining Table", 59], ["Fluted Dining Set with Bench", "", "Oval fluted-base table with bench and 3 boucle chairs", "Dining Table", 60], ["Round Fluted Dining Set", "", "Round fluted-base table with 2 upholstered armchairs", "Dining Table", 61], ["Dark Round Dining Set", "", "Round dark table with fluted base and 5 chairs", "Dining Table", 62], ["Wavy-top Dining Set", "", "Black wavy-top table with 4 cane-back armchairs", "Dining Table", 63], ["Handled Serving Tray", "", "Slim wooden tray with a rounded handle, natural teak finish", "Tray", 68], ["Set of Six Wooden Bowls", "", "Hand-turned bowls in a rich natural finish", "Bowl", 69], ["Footed Wooden Bowls", "", "Glossy bowls on a turned foot, set of two", "Bowl", 70], ["Nesting Bowl Trio", "", "Three wooden bowls in graduated sizes", "Bowl", 71], ["Salad & Snack Bowl Set", "", "Rounded bowls for salads, snacks and dips", "Bowl", 72], ["Round Board with Metal Handle", "", "Round wooden board with a curved black metal handle", "Chopping Board", 73], ["Paddle Chopping Board", "", "Classic paddle board with a hanging hole", "Chopping Board", 74], ["Striped Chopping Board", "", "Contrasting wood strips with a shaped handle", "Chopping Board", 75], ["Loop-handle Chopping Board", "", "Panelled board with a carved loop handle", "Chopping Board", 76], ["Teak Chopping Board", "", "Live-edge grain, curved handle with hanging hole", "Chopping Board", 77], ["Long Paddle Serving Tray", "", "Extra-long tray for breads, charcuterie and canapes", "Tray", 78], ["Teak Paddle Tray", "", "Long grain-rich serving paddle with a gentle scoop", "Tray", 79], ["Slatted Tray Set", "", "Nesting set of three slatted wooden trays with handles", "Tray", 80], ["Free-form Wooden Tray", "", "Sculpted serving tray with a natural wavy grain", "Tray", 81]];
+var MAINS=["All","Furniture","Dining Table","Lighting","Home Decor","Kitchenware","Saharanpur Special"];
+var F={Kitchenware:["Tray","Bowl","Chopping Board"],Furniture:["Sofa","Side Table","Console","Chair","Dining Table"],Lighting:["Table Lamp","Floor Lamp"]},W={},cf="All",q="";
+var toast=document.getElementById("toast"),tt,lb=document.getElementById("lb");
+function bg(){document.querySelectorAll("[data-bg]").forEach(function(e){e.style.backgroundImage="url("+IM[e.dataset.bg]+")"});document.querySelectorAll("[data-src]").forEach(function(e){e.src=IM[e.dataset.src]})}
+function say(m){toast.textContent=m;toast.classList.add("on");clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove("on")},1800)}
+function grp(f){for(var k in F)if(f==k||F[k].indexOf(f)>-1)return k;return""}
+function mix(f){var L=P.filter(function(p){return match(f,p)});if(!F[f])return L.slice(0,10);var by=F[f].map(function(s){return L.filter(function(p){return p[3]==s})}),o=[];for(var i=0;o.length<10&&i<12;i++)by.forEach(function(a){if(a[i]&&o.length<10)o.push(a[i])});return o}
+function match(f,p){return f=="All"||p[3]==f||(F[f]&&F[f].indexOf(p[3])>-1)}
+function card(p){
+var c=document.createElement("article");c.className="card";
+var t=p[0]+(p[1]?" ("+p[1]+")":""),wa="https://wa.me/918077625193?text="+encodeURIComponent("Hi Woodenzone, I'd like to enquire about the "+t+".");
+c.innerHTML='<div class="ph"><img alt="'+p[0]+'" loading="lazy"><span class="tag">'+p[3].replace(/s$/,"")+'</span><button class="wish" aria-label="Add to wishlist" aria-pressed="'+!!W[p[0]]+'">\u2665</button><a class="quick" href="'+wa+'">Enquire on WhatsApp</a></div><h3>'+p[0]+'</h3><div class="meta">'+(p[1]?p[1]+" \u00b7 ":"")+p[2]+'</div><div class="meta"><b>Price on request</b></div>';
+var im=c.querySelector("img");im.src=IM[p[4]];if(p[3]=="Floor Lamp")im.style.objectPosition="50% 20%";
+im.onclick=function(){lb.querySelector("img").src=IM[p[4]];lb.showModal()};
+c.querySelector(".wish").onclick=function(e){var b=e.currentTarget,on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",on);W[p[0]]=on;document.getElementById("count").textContent=Object.keys(W).filter(function(k){return W[k]}).length;say(on?"Added to wishlist":"Removed from wishlist")};
+return c}
+lb.onclick=function(){lb.close()};
+/* category carousels */
+var cars=document.getElementById("cars");
+[["Saharanpur Special","Saharanpur Special"],["Furniture","Furniture"],["Dining Table","Dining Table"],["Lighting","Lighting"],["Home Decor","Home Decor"],["Kitchenware","Kitchenware"]].forEach(function(x,i){
+var s=document.createElement("section");if(i%2==0)s.style.background="var(--cream)";
+s.innerHTML='<div class="wrap"><div class="sh"><h2>'+x[0]+'</h2><div class="c"><button class="more" data-f="'+x[1]+'">More to explore</button><button aria-label="Previous">\u2039</button><button aria-label="Next">\u203a</button></div></div><div class="car"></div></div>';
+var car=s.querySelector(".car");mix(x[1]).forEach(function(p){car.appendChild(card(p))});
+var b=s.querySelectorAll(".c button");b[1].onclick=function(){car.scrollBy({left:-car.clientWidth*.8,behavior:"smooth"})};b[2].onclick=function(){car.scrollBy({left:car.clientWidth*.8,behavior:"smooth"})};
+cars.appendChild(s)});
+/* filter grid */
+var chips=document.getElementById("chips"),grid=document.getElementById("grid");
+MAINS.forEach(function(n){
+var b=document.createElement("button");b.textContent=n;b.onclick=function(){setF(n)};chips.appendChild(b)});
+function show(){grid.innerHTML="";var n=0;
+P.forEach(function(p){if(match(cf,p)&&(!q||(p.join(" ")).toLowerCase().indexOf(q)>-1)){grid.appendChild(card(p));n++}});
+document.getElementById("none").style.display=n?"none":"block";
+var g=grp(cf);chips.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",b.textContent==(MAINS.indexOf(cf)>-1?cf:g))});
+var sb=document.getElementById("subs");sb.innerHTML="";
+if(g){[g].concat(F[g]).forEach(function(n){var b=document.createElement("button");b.textContent=n==g?"All "+g:n;b.setAttribute("aria-pressed",n==cf);b.onclick=function(){setF(n)};sb.appendChild(b)})}}
+function setF(f,go){cf=f;show();if(go)document.getElementById("shop").scrollIntoView({behavior:"smooth"})}
+document.addEventListener("click",function(e){var a=e.target.closest("[data-f]");if(!a)return;e.preventDefault();q="";document.getElementById("q").value="";setF(a.dataset.f,true);nav.classList.remove("open")});
+document.getElementById("q").oninput=function(e){q=e.target.value.trim().toLowerCase();cf="All";show();if(q)document.getElementById("shop").scrollIntoView({behavior:"smooth"})};
+document.getElementById("sbtn").onclick=function(){var s=document.getElementById("srch");s.classList.toggle("on");if(s.classList.contains("on"))document.getElementById("q").focus()};
+/* hero slider */
+var sl=document.querySelectorAll(".slide"),ds=document.getElementById("dots"),si=0,st;
+sl.forEach(function(_,i){var b=document.createElement("button");b.setAttribute("aria-label","Slide "+(i+1));b.onclick=function(){go(i)};ds.appendChild(b)});
+function go(i){si=(i+sl.length)%sl.length;sl.forEach(function(s,k){s.classList.toggle("on",k==si)});ds.querySelectorAll("button").forEach(function(b,k){b.classList.toggle("on",k==si)});clearInterval(st);st=setInterval(function(){go(si+1)},6500)}
+document.getElementById("pv").onclick=function(){go(si-1)};document.getElementById("nx").onclick=function(){go(si+1)};
+/* misc */
+var mq=document.getElementById("mq").firstChild;mq.innerHTML+=mq.innerHTML;
+var m=document.getElementById("menu"),nav=document.getElementById("nav");
+m.onclick=function(){var o=nav.classList.toggle("open");m.setAttribute("aria-expanded",o)};
+document.getElementById("nl").onsubmit=function(e){e.preventDefault();say("Thanks for subscribing");e.target.reset()};
+["fsub","lsub","ksub"].forEach(function(id){var tl=document.getElementById(id.charAt(0)+"tile");tl.onclick=function(e){e.preventDefault();["fsub","lsub","ksub"].forEach(function(o){if(o!=id)document.getElementById(o).classList.remove("on")});var f=document.getElementById(id);f.classList.toggle("on");if(f.classList.contains("on"))f.scrollIntoView({behavior:"smooth",block:"nearest"})}});
+bg();show();go(0);
+var rv=document.querySelectorAll("section:not(.hero)>.wrap");
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.04});rv.forEach(function(e){e.classList.add("rv");io.observe(e)})}
+</script>
+</body></html>
